@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-3">
+        
+
+            <ul class="list-group">
+                <li *ngFor="let item of menu" 
+                class="list-group-item" 
+                [routerLink]="[item.ruta]"
+                routerLinkActive="active">
+                {{ item.texto }}
+            </li>
+                
+    <!--             <li class="list-group-item" [routerLink]="['/menu/reports/barra']">Barras</li>
+            <li class="list-group-item" [routerLink]="['/menu/reports/barra-doble']">Barras Doble</li>
+                <li class="list-group-item" [routerLink]="['/menu/reports/dona']">Dona</li>
+                <li class="list-group-item" [routerLink]="['/menu/reports/dona-http']">DonaHT</li>  -->
+    
+            </ul>
+        
+    </div>
+    <div class="col-9">
+        <router-outlet></router-outlet>
+    </div>
+</div>

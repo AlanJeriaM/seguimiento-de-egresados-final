@@ -1,0 +1,50 @@
+<!-- <div [routerLink]="['/admin/menu']" class="card" style="background-image: url('../../../../assets/images/banner.png');">
+    <div class="card-body">
+        <div class="row justify-content-center">
+             <div class="col-md-6 text-center mb-5">
+                <h1 class="btn"></h1>
+             </div>
+        </div>
+    </div>
+ </div> -->
+ 
+
+<div [ngSwitch]="getCurrentUrl()">
+    <div *ngSwitchCase="''">
+        <div class="container-fluid" class="m-0 vh-100 row justify-content-center align-items-center">
+            <div class="row justify-content-center ">
+                <div class="col-6">
+                    <h3 class="text-center fw-bold">¿Qué desea realizarrrr?</h3>
+                    <div class="card" >
+                        <h4 class="card-subtitle mb-3 text-muted">Seleccione una opción:</h4>
+                        <div class="card-body">
+                            <div class="d-grid gap-3">
+                                <button class="btn btn-primary" type="button" [routerLink]="['/admin/menu/graduate-reports']">Ver reportes de egresados con LinkedIn</button>
+                                <button class="btn btn-success" type="button" [routerLink]="['/admin/menu/reports']" >Administracion de reportes</button>
+                                <button class="btn btn-success" type="button" [routerLink]="['/admin/menu/user']">Administracion de usuarios</button>
+                                <button class="btn btn-success" type="button" [routerLink]="['/admin/menu/survey']">Administracion de encuestas</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngSwitchCase="'graduate-reports'">
+        <button  class="btn btn-primary my-3" [routerLink]="['/admin/menu']">Atrás</button>
+        <app-graduate-reports-management></app-graduate-reports-management>
+    </div>
+    <div *ngSwitchCase="'reports'">
+        <button  class="btn btn-primary my-3" [routerLink]="['/admin/menu']">Atrás</button>
+        <app-report-management></app-report-management>
+    </div>
+    <div *ngSwitchCase="'survey'">
+        <button  class="btn btn-primary my-3" [routerLink]="['/admin/menu']">Atrás</button>
+        <app-survey-management></app-survey-management>
+    </div>
+    <div *ngSwitchCase="'user'">
+        <button  class="btn btn-primary my-3" [routerLink]="['/admin/menu']">Atrás</button>
+        <app-user-management></app-user-management>
+    </div>
+</div>
+

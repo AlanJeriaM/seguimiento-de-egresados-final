@@ -1,0 +1,91 @@
+ <mat-sidenav-container fullscreen color="primary">
+    <mat-sidenav #sidenav mode="push">
+        <mat-toolbar color="primary">
+            <span>Menú</span>
+                <button mat-icon-button (click)="sidenav.toggle()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+        </mat-toolbar>
+
+      <mat-nav-list>
+
+        <!-- <a  routerLink="./reports"
+            mat-list-item
+            (click)="sidenav.toggle()"
+        >
+        <mat-icon mat-list-icon>add</mat-icon>
+        <span>Administracion de reportes</span>
+        </a> -->
+
+        <a  routerLink="./users"
+            mat-list-item
+            (click)="sidenav.toggle()"
+        >
+        <mat-icon mat-list-icon>add</mat-icon>
+        <span>Administracion de usuarios</span>
+        </a>
+
+        <a  routerLink="./survey"
+            mat-list-item
+            (click)="sidenav.toggle()"
+        >
+        <mat-icon mat-list-icon>add</mat-icon>
+        <span>Administracion de encuestas </span>
+        </a>
+
+
+        <a  routerLink="./graduate-reports"
+            mat-list-item
+            (click)="sidenav.toggle()"
+        >
+        <mat-icon mat-list-icon>add</mat-icon>
+        <span>Reportes de egresados</span>
+        </a>
+
+
+      </mat-nav-list>
+
+      
+
+    </mat-sidenav>
+
+    <mat-toolbar color="primary">
+      <button mat-icon-button
+              (click)="sidenav.toggle()" >
+          <mat-icon>menu</mat-icon>
+      </button>
+
+      <span class="spacer"></span>
+
+
+
+      <a mat-button class="btn btn-primary profile-button"
+      href="admin/menu/">
+      <mat-icon mat-list-icon>home</mat-icon> Home
+      </a>  
+
+
+  
+      <button mat-button class="btn btn-primary profile-button"
+              routerLink="./perfil">
+              <mat-icon mat-list-icon>person</mat-icon>
+              Perfil
+          </button>
+
+      <button mat-button class="btn btn-primary profile-button"
+              (click)="logout()">
+              <mat-icon mat-list-icon>logout</mat-icon>
+              Cerrar sesión
+          </button>
+
+      
+
+      
+    </mat-toolbar>
+
+    <div class="container-edit">
+        <router-outlet></router-outlet>
+    </div>
+
+
+  </mat-sidenav-container> 

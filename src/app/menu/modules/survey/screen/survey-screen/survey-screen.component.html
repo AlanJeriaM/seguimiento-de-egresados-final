@@ -1,0 +1,73 @@
+
+ <!--  
+    Fernando herrera 
+    <mat-drawer-container>
+        <mat-drawer #sidenav mode="push">
+            <h1>Sidenav</h1>
+        </mat-drawer>
+        <mat-toolbar>
+            <button mat-icon-button
+                    (click)="sidenav.toggle">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </mat-toolbar>
+  </mat-drawer-container> -->
+
+  
+
+  
+
+<!-- 
+    Logo de la u
+    <div [routerLink]="['/menu/survey']" class="card" style="background-image: url('../../../../assets/images/banner.png');">
+    <div class="card-body">
+        <div class="row justify-content-center">
+             <div class="col-md-6 text-center mb-5">
+                <h1 class="btn"></h1>
+             </div>
+        </div>
+    </div>
+ </div> -->
+
+<div [ngSwitch]="getCurrentUrl()" >
+    <div *ngSwitchCase="''">
+        <div class="container-fluid" class="m-0 vh-100 row justify-content-center align-items-center">
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <h3 class="text-center fw-bold">¿Qué desea realizar?</h3>
+                    <div class="card">
+                        <h4 class="card-subtitle mb-3 text-muted">Seleccione una opción:</h4>
+                        <div class="card-body">
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-success" type="button" [routerLink]="['/menu/survey/new']" >Encuestas nuevas <span class="badge badge-light">9</span></button>
+                                <button class="btn btn-secondary" type="button" [routerLink]="['/menu/survey/pending']">Encuestas pendientes <span class="badge badge-light">5</span> </button>
+                                <button class="btn btn-danger" type="button" [routerLink]="['/menu/survey/completed']">Encuestas completadas<span class="badge badge-light">4</span></button>
+                                <button class="btn btn-primary" type="button" [routerLink]="['/menu/reports']">Reportes de egresados desde LinkedIn</button>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngSwitchCase="'new'">
+        <button  class="btn btn-primary my-3" [routerLink]="['/menu/survey']">Atrás</button>
+
+        <app-new-survey></app-new-survey>
+    </div>
+    <div *ngSwitchCase="'pending'">
+        <button  class="btn btn-primary my-3" [routerLink]="['/menu/survey']">Atrás</button>
+        <app-pending-surveys></app-pending-surveys>
+    </div>
+    <div *ngSwitchCase="'completed'">
+        <button  class="btn btn-primary my-3" [routerLink]="['/menu/survey']">Atrás</button>
+        <app-completed-surveys></app-completed-surveys>
+    </div>
+    <div *ngSwitchCase="'reports'">
+        <button  class="btn btn-primary my-3" [routerLink]="['/menu/survey']">Atrás</button>
+        <app-graduate-reports></app-graduate-reports>
+    </div>
+</div>
+

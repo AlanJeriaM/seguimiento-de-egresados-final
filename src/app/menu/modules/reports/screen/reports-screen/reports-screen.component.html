@@ -1,0 +1,14 @@
+<div [ngSwitch]="getCurrentUrl()" >
+    <div *ngSwitchCase="'barra'">
+        <app-barra></app-barra>
+    </div>
+    <div *ngSwitchCase="'barra-doble'">
+        <app-barra-doble></app-barra-doble>
+    </div>
+    <div *ngSwitchCase="'dona'">
+        <app-dona></app-dona>
+    </div>
+    <div *ngSwitchCase="'dona-http'">
+        <app-dona-http></app-dona-http>
+    </div>
+</div>
